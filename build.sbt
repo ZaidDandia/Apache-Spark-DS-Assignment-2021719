@@ -8,4 +8,7 @@ libraryDependencies ++= Seq(
 )
 
 fork in run := true
-javaOptions += "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED"
+javaOptions ++= Seq(
+  "-Xms512M",
+  "-Xmx2G"
+)
