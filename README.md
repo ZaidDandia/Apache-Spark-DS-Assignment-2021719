@@ -58,20 +58,13 @@ docker build -t spark-scala-app .
 ### 2. Run the Docker Container
 Start a Docker container using the built image:
 ```bash
-docker run -it --rm spark-scala-app
+docker run --rm -v $(pwd)/output:/app/output spark-scala-app
 ```
 
-### 3. Submit the Spark Job
-Inside the container, execute the Spark job with the following command:
-```bash
-/opt/spark/bin/spark-submit \
-    --class NetflixEDA \
-    --master local[*] \
-    /path/to/your/jar/NetflixEDA.jar
-```
+
 
 ### 4. View Output
-The results will be saved in the `output/` directory within the container or a mapped volume.
+The results will be saved in the `output/` directory within the project directory
 
 ---
 
